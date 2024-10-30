@@ -5,5 +5,18 @@
  * @returns {string}
  */
 module.exports.backToFront = function backToFront(str, symbolsCount) {
-  throw new Error('Not implemented');
+  if (symbolsCount <= 0) {
+    return str;
+  }
+
+  if (symbolsCount === str.length) {
+    return str + str + str;
+  }
+
+  if (symbolsCount > str.length) {
+    return str;
+  }
+
+  const suffix = str.slice(-symbolsCount);
+  return `${suffix}${str}${suffix}`;
 };

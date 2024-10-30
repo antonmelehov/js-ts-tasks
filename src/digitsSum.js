@@ -4,5 +4,11 @@
  * @returns {number}
  */
 module.exports.digitsSum = function digitsSum(n) {
-  throw new Error('Not implemented'); // remove this line
+  let sum = 0;
+  n = Math.abs(n);
+  while (n !== 0) {
+    sum = sum + (n % 10);
+    n = parseInt(n / 10);
+  }
+  return sum;
 };
