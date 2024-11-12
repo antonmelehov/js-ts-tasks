@@ -10,12 +10,12 @@
 module.exports.replacement = function replacement(arr) {
   let result = [];
 
-  for (var i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     let num = Math.abs(arr[i]);
     let digitCount;
 
     if (num === 0) {
-      digitCount = 1; // Treat zero as 1 digit
+      digitCount = 1;
     } else {
       digitCount = Math.floor(Math.log10(num)) + 1;
     }
