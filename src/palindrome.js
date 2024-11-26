@@ -13,5 +13,19 @@
  * @returns {function}
  */
 module.exports.palindrome = function palindrome(TestUtils) {
-  throw new Error('Not implemented'); // remove this line and create your solution
+  return function (str) {
+    const lowerCaseStr = str.toLowerCase();
+
+    let alphanumericStr = '';
+    for (let i = 0; i < lowerCaseStr.length; i++) {
+      const char = lowerCaseStr[i];
+      const code = char.charCodeAt(0);
+
+      if ((code >= 48 && code <= 57) || (code >= 97 && code <= 122)) {
+        alphanumericStr += char;
+      }
+    }
+
+    return TestUtils.isPalindrome.call({ str: alphanumericStr });
+  };
 };
