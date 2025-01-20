@@ -1,5 +1,286 @@
-/* your css code here  */
+  /* Variables */
+  :root {
+    --instagram-blue: #0095F6;
+    --dark-gray: #262626;
+    --highlight-gray: #363636;
+    --light-gray: #8E8E8E;
+    --purple: #8E49FF;
+  }
 
-body {
-  background: linear-gradient(45deg, #FFD6C3, #FCB5FF, #BEC6FF);
-}
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    background-color: black;
+    color: white;
+  }
+
+  .container {
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 10px 16px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 10px 0;
+    position: relative;
+    height: 44px;
+  }
+
+  .back-icon {
+    top: 40px;
+    width: 24px;
+    height: 24px;
+    background: #363636;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+  }
+
+  .username {
+    position: absolute;  /* Change to absolute positioning */
+    left: 50%;          /* Center horizontally */
+    transform: translateX(-50%);  /* Center horizontally */
+    top: 40px;          /* Adjust this value to move username down */
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .more-icon {
+    top: 40px;
+    width: 24px;
+    height: 24px;
+    background: #363636;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+  }
+
+  /* Profile */
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-bottom: 16px;
+  }
+
+  .profile-picture {
+    width: 86px;
+    height: 86px;
+    background: #8E49FF;
+    border-radius: 50%;
+  }
+
+  .profile-stats {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    color: #8E8E8E;
+    font-size: 14px;
+  }
+
+  /* Bio */
+  .bio {
+    margin-bottom: 16px;
+  }
+
+  .name {
+    font-weight: 600;
+    margin-bottom: 0.5px;
+  }
+
+  .description {
+    color: #8E8E8E;
+    margin-bottom: 0.5px;
+  }
+
+  .website {
+    color: #ffff;
+    font-weight: 300;
+    text-decoration: none;
+  }
+
+  /* Action Buttons */
+  .actions {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 20px;
+  }
+
+  .actions button {
+    padding: 3px 16px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .follow-btn,
+  .message-btn,
+  .email-btn {
+    flex: 2;
+    min-width: 0;
+  }
+
+  .follow-btn {
+    background: #0095F6;
+    color: white;
+    border: #121212 0.1px solid;
+  }
+
+  .message-btn,
+  .email-btn,
+  .contact-options-btn{
+    background: #000000;
+    color: white;
+    border: 	#808080 0.1px solid;
+  }
+
+  .contact-options-btn {
+    flex: 0 0 34px;
+    width: 10px;
+    padding: 7px 0;
+    background: #000000;
+    color: white;
+  }
+
+  /* Highlights */
+  .highlights {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+    margin-bottom: 24px;
+  }
+
+  .highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .highlight-circle {
+    width: 54px;
+    height: 54px;
+    background: #262626;
+    border-radius: 50%;
+    box-shadow: 0  0 2px white;
+  }
+
+
+  .highlight span {
+    font-size: 12px;
+    color: white;
+  }
+
+  /* Gallery Navigation */
+  .gallery-nav {
+    display: flex;
+    margin-bottom: 2px;
+    position: relative;
+    border-top: 1px solid #262626; /* Add thin line above icons */
+    padding-top: 1px;/* For absolute positioning of children */
+  }
+
+  .nav-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  /* Move the top border to the bottom */
+  .nav-item.active {
+    position: relative; /* For the border positioning */
+  }
+
+  /* Create a full-width line at the top */
+  .gallery-nav::after {
+    content: '';
+    position: absolute;
+    top: 100%; /* Position it below the nav items */
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #262626;
+  }
+
+  /* Create the active indicator line */
+  .nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* Position it at the bottom */
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: white;
+    z-index: 1; /* Place it above the gray line */
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+    background: #363636;
+    border-radius: 4px;
+  }
+  /* Gallery Grid */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 1;
+    background: #8E49FF;
+  }
+
+  /* Bottom Navigation */
+  .bottom-nav {
+    /* Remove position: fixed */
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #121212;
+    border-top: 1px solid #262626;
+    /* Add margin-top to push it to the bottom of the container */
+    margin-top: auto;
+  }
+
+  .bottom-nav .nav-icon {
+    width: 24px;
+    height: 24px;
+    background: #363636;
+    border-radius: 0;  /* Square shape */
+  }
+
+  /* Add container modifications to enable flexbox positioning */
+  .container {
+    max-width: 390px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    /* Add these properties to enable bottom nav positioning */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }

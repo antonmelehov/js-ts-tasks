@@ -10,7 +10,108 @@
   </head>
   <body>
     <iphone-frame>
-      <!-- Your HTML Code here -->
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Instagram Profile</title>
+      </head>
+      <body>
+      <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <img src="./imgs/icons8-back-100.png"> <!-- Should be back arrow SVG -->
+          <span class="username">anton_melehov</span>
+          <div class="more-icon"></div> <!-- Should be more options SVG -->
+        </header>
+
+        <!-- Profile -->
+        <div class="profile">
+          <div class="profile-picture"></div>
+          <div class="profile-stats">
+            <div class="stat">
+              <div class="stat-value">129</div>
+              <div class="stat-label">Posts</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">3680</div>
+              <div class="stat-label">Followers</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">230</div>
+              <div class="stat-label">Following</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="bio">
+          <div class="name">Anton Melehov</div>
+          <div class="description">Local business</div>
+          <a href="#" class="website">www.website.com</a>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+          <button class="follow-btn">Follow</button>
+          <button class="message-btn">Message</button>
+          <button class="email-btn">Email</button>
+          <button class="contact-options-btn">▼</button>
+        </div>
+
+        <!-- Highlights -->
+        <div class="highlights">
+          <div class="highlight">
+            <div class="highlight-circle"></div>
+            <span>Highlight</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-circle"></div>
+            <span>Highlight</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-circle"></div>
+            <span>Highlight</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-circle"></div>
+            <span>Highlight</span>
+          </div>
+        </div>
+
+        <!-- Gallery Navigation -->
+        <div class="gallery-nav">
+          <div class="nav-item active">
+            <div class="nav-icon"></div> <!-- Should be grid view SVG -->
+          </div>
+          <div class="nav-item">
+            <div class="nav-icon"></div> <!-- Should be tags SVG -->
+          </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery">
+          <img src="./src/imgs/Img-01.jpg">
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+          <div class="nav-icon"></div> <!-- Should be home SVG -->
+          <div class="nav-icon"></div> <!-- Should be search SVG -->
+          <div class="nav-icon"></div> <!-- Should be add post SVG -->
+          <div class="nav-icon"></div> <!-- Should be like SVG -->
+          <div class="nav-icon"></div> <!-- Should be profile SVG -->
+        </nav>
+      </div>
+      </body>
+      </html>
     </iphone-frame>
   </body>
 </html>
