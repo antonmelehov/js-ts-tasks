@@ -6,7 +6,6 @@
 module.exports.getDaysToNewYear = function getDaysToNewYear(targetDate: Date | string): number {
   let date: Date;
 
-  // Если передана строка, парсим ее в объект Date
   if (typeof targetDate === 'string') {
     const parts = targetDate.split('.');
     if (parts.length !== 3) {
@@ -21,7 +20,6 @@ module.exports.getDaysToNewYear = function getDaysToNewYear(targetDate: Date | s
       throw new Error('Invalid date component');
     }
 
-    // Создаем объект даты с учетом месяца, который в JavaScript начинается с 0 (январь — это 0)
     date = new Date(year, month - 1, day);
   } else {
     date = targetDate;
@@ -31,13 +29,10 @@ module.exports.getDaysToNewYear = function getDaysToNewYear(targetDate: Date | s
     throw new Error('Invalid date');
   }
 
-  // Новый год - 1 января следующего года
   const nextNewYear = new Date(date.getFullYear() + 1, 0, 1);
 
-  // Получаем разницу в миллисекундах
   const diff = nextNewYear.getTime() - date.getTime();
 
-  // Конвертируем миллисекунды в дни
   const daysLeft = Math.floor(diff / (1000 * 60 * 60 * 24));
 
   return daysLeft;

@@ -19,7 +19,7 @@
       }
     ],
     "expected": {
-      "value": 973,
+      "value": 243,
       "type": "number"
     }
   },
